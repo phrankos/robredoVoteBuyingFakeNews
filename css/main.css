@@ -228,6 +228,22 @@ input, select, textarea {
 		max-width: calc(100% - 50px);
 		width: 1200px;
 	}
+	#container-div {
+		height: 800px; /* Specify the desired height */
+		width: 100%; /* Occupies the whole width */
+		display: flex;
+		justify-content: space-between;
+	  }
+	
+	  .left-div {
+		width: 25%;
+		background-color: lightblue;
+	  }
+	
+	  .right-div {
+		width: 75%;
+		background-color: lightgreen;
+	  }
 
 		.container.medium {
 			width: 900px;
@@ -1643,6 +1659,13 @@ input, select, textarea {
 			margin: 0 0 2em 0;
 		}
 
+		.image.featured.data {
+			display: block;
+			width: 100%;
+			height: 10%;
+			margin: 0 0 2em 0;
+		}
+
 		.image.left {
 			float: left;
 			margin: 0 2em 2em 0;
@@ -1928,8 +1951,19 @@ input, select, textarea {
 		.box.style2 h3 {
 			margin-bottom: 0.25em;
 		}
+		.box.style3 h3 {
+			margin-bottom: 0.25em;
+		}
 
 		.box.style2 .image {
+			position: relative;
+			left: 2em;
+			top: 2em;
+			margin: -4em 0 4em -4em;
+			width: auto;
+		}
+
+		.box.style3 .image {
 			position: relative;
 			left: 2em;
 			top: 2em;

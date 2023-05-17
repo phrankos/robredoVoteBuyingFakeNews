@@ -79,7 +79,7 @@
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
 							<section class="box style1">
-								<span class="icon featured fa-exclamation-triangle"></span>
+								<span class="icon featured fa-exclamation-triangle solid"></span>
 								<h3>Action Plan</h3>
 								<p>Collect all tweets about vote-buying and filter out the tweets by their targeted candidate.</p>
 							</section>
@@ -204,22 +204,38 @@
 
 						<div class="col-4 col-6-medium col-12-small">
 							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/votebuying_data_5.jpg" alt="" /></a>
-								<h3><a href="#">Handling Missing Values</a></h3>
-								<p>
+								<a href="#" class="image featured"><img src="images/votebuying_data_17.jpg" alt="" /></a>
+								<h3><a href="#">Tokenizing and Lower Casing</a></h3>
+								<p> During this process, we had to translate the tweets first into English. We used googletrans to translate the
+									tweets into English. If we found the translation to be inappropriate or inaccurate, we manually translated the
+									tweet ourselves. The tweets were then lowercased and had the punctuation marks removed. Afterwards, it was then tokenized with the NLTK Python library using its tokenize module. 
 								</p>
 							</article>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
 							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/votebuying_data_6.jpg" alt="" /></a>
-								<h3><a href="#">Ensuring Formatting Consistency</a></h3>
-								<p>Upon inspection of our data, we discovered that formats involving time and date were not constant.
-									This was going to be a problem in the future when conducting statistical analysis. We manually went
-									through our dataset and corrected the format to better suit our needs.
+								<a href="#" class="image featured"><img src="images/votebuying_data_18.jpg" alt="" /></a>
+								<h3><a href="#">Stemming and Lemmatization</a></h3>
+								<p>To cater for future interest in text analysis, we deemed it necessary to reduce the number of vocabulary in the tweets. After the previous step,
+									we then used the NLTK library for its PorterStemmer and WordNetLemmatizer modules to be able to reduce the words back to their base or root forms.
+									One benefit of this is that this simplification can improve the efficiency of text processing tasks and reduce the computational resources required
+									if we wish to pursue an in-depth text analysis of the tweets collected.
 								</p>
 							</article>
 						</div>
+
+						<div class="container">
+							<h2>Time Series Analysis</h2>
+							<p>The purpose of time series analysis is to understand insights from data that is collected over time. In our topic, since we are using categorical data,
+								we opted to use the Binning method. With a binning interval of 1 month, we were able to observe and analyze long-term trends over time.
+								This was done by ensuring that the Date posted column was converted to the datetime Python format. After that, making us of Pandas, we were able to
+								create a new data frame with the binned time series analysis assigning it a bin size of 1M or 1 Month. Finally using the  pd.Grouper function from 
+								the Pandas library to specify the grouping frequency for the time series data, we came up with the results below. Which we then tabulated into a graph manually. 						
+							</p>
+							<a href="#" class="image featured box"><img src="images/votebuying_data_19.png" alt="" /></a>
+							<a href="#" class="image featured box"><img src="images/votebuying_data_20.png" alt="" /></a>
+						</div>
+
 					</div>
 					<br>
 					<br>

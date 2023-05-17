@@ -79,14 +79,14 @@
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
 							<section class="box style1">
-								<span class="icon featured solid fa-clipboard-list"></span>
+								<span class="icon featured fa-exclamation-triangle"></span>
 								<h3>Action Plan</h3>
 								<p>Collect all tweets about vote-buying and filter out the tweets by their targeted candidate.</p>
 							</section>
 						</div>
 					</div> <!--Problem Formulation End-->
 					<footer>
-						<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
+						<p></p>
 						<a href="#portfolio" class="button large scrolly">Let's take a look at our data</a>
 					</footer>
 				</div>
@@ -96,56 +96,173 @@
 			<article id="data" class="wrapper style3">
 				<div class="container">
 					<header>
-						<h2>We mined the internet for fake news data.</h2>
-						<p>Proin odio consequat  sapien vestibulum consequat lorem dolore feugiat.</p>
+						<h2>We mined Twitter for all tweets about vote buying in the 2022 elections.</h2>
+						<p>The official start and end of the 2022 Philippine election period as presecribed by the COMELEC
+							was from January 9 to June 8, 2022. Vote buying is among the many prohibited acts during the election period.
+							(<a href="https://aceproject.org/main/samples/ei/eix_c055.pdf">See here</a>) 
+						</p>
+						<br></br>
+						<p>	
+							In this section of our portfolio, we will discuss what we did to explore the 151 data 
+							that we've collected and how we made sure that they are clean and appropriate for our 
+							research objectives.
+						</p>
 					</header>
 					<div class="row">
 						<div class="col-4 col-6-medium col-12-small">
 							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+								<a href="#" class="image featured data"><img src="images/votebuying_data_1.jpg" alt="" /></a>
 								<h3><a href="#">Topic</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
+								<p>Once again, our topic is about tweets about vote buying allegations about the top 3 presidential candidates
+									in the 2022 Philippine Elections.</p>
 							</article>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
 							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+								<a href="#" class="image featured"><img src="images/votebuying_data_2.jpg" alt="" /></a>
 								<h3><a href="#">Keywords</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
+								<p>The keywords we used to scrape tweets are as follows: Vote buying, vote-buying, Bumibili ng Boto, Bumili ng Boto, Leki, Pacquiao, and BBM. In no specific order.</p>
 							</article>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
 							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+								<a href="#" class="image featured"><img src="images/votebuying_data_3.jpg" alt="" /></a>
 								<h3><a href="#">Tools</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
+								<p>For scraping tweets we used Apify. It is a web scraping and automation platform that provides tools 
+									for extracting data from websites, in our case Twitter.</p>
+							</article>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style3">
+								<a href="#" class="image featured"><img src="images/votebuying_data_4.jpg" alt="" /></a>
+							</article>
+						</div>
+
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="#" class="image featured"><img src="images/votebuying_data_5.jpg" alt="" /></a>
+								<h3><a href="#">Handling Missing Values</a></h3>
+								<p>Some columns during our data collection had missing data. After some careful discussion,
+									we concluded that some of these columns were not relevant to our study hence we decided
+									to remove some of them. The remaining columns that were relevant to our study, had no missing values.
+								</p>
 							</article>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
 							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-								<h3><a href="#">Tempus dolore</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
+								<a href="#" class="image featured"><img src="images/votebuying_data_6.jpg" alt="" /></a>
+								<h3><a href="#">Ensuring Formatting Consistency</a></h3>
+								<p>Upon inspection of our data, we discovered that formats involving time and date were not constant.
+									This was going to be a problem in the future when conducting statistical analysis. We manually went
+									through our dataset and corrected the format to better suit our needs.
+								</p>
 							</article>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
 							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
-								<h3><a href="#">Feugiat aliquam</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
+								<a href="#" class="image featured"><img src="images/votebuying_data_7.jpg" alt="" /></a>
+								<h3><a href="#">Categorical Data Encoding - Candidates</a></h3>
+								<p>One thing we did with our data was to identify which presidential candidate was being accussed of allegations
+									of vote buying in the tweet. We decided to use categorical data encoding for each tweet assigning the tweet to be either
+									about Robredo, Marcos, Pacquiao, or a mix of any of the three.
+								</p>
 							</article>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
 							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-								<h3><a href="#">Sed amet ornare</a></h3>
-								<p>Ornare nulla proin odio consequat.</p>
+								<a href="#" class="image featured"><img src="images/votebuying_data_8.jpg" alt="" /></a>
+								<h3><a href="#">Categorical Data Encoding - Content Type</a></h3>
+								<p> Another column we encoded into categorical data was the content type. Whether the content of the tweet
+									is considered Rational or Emotional.
+								</p>
+							</article>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="#" class="image featured"><img src="images/votebuying_data_9.jpg" alt="" /></a>
+								<h3><a href="#">Categorical Data Encoding - Others</a></h3>
+								<p> Other columns that we switched into categorical data encoding were: Tweet Type, Account Type, and Rating.
+								</p>
+							</article>
+						</div>
+
+						<div class="container">
+							<h2>Outliers in our data?</h2>
+							<p>In order to determine if there were any outliers in our data, we used the date posted as the column index.
+								After obtaining their mean and standard deviation, we were able to tabulate the z-scores of every date
+								in the data. Through this we were able to discover 1 outlier data. This row was then removed and not replaced
+								since we had a surplus of data collected during the initial collection.
+							</p>
+							<a href="#" class="image featured box"><img src="images/votebuying_data_10.png" alt="" /></a>
+						</div>
+
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style3">
+								<a href="#" class="image featured"><img src="images/votebuying_data_11.jpg" alt="" /></a>
+							</article>
+						</div>
+
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="#" class="image featured"><img src="images/votebuying_data_5.jpg" alt="" /></a>
+								<h3><a href="#">Handling Missing Values</a></h3>
+								<p>
+								</p>
+							</article>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="#" class="image featured"><img src="images/votebuying_data_6.jpg" alt="" /></a>
+								<h3><a href="#">Ensuring Formatting Consistency</a></h3>
+								<p>Upon inspection of our data, we discovered that formats involving time and date were not constant.
+									This was going to be a problem in the future when conducting statistical analysis. We manually went
+									through our dataset and corrected the format to better suit our needs.
+								</p>
 							</article>
 						</div>
 					</div>
-					<footer>
-						<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
-					</footer>
+					<br>
+					<br>
+					<div class="image featured box">
+						<img src="images/votebuying_data_12.png" alt="" />
+						<p style="text-align: left;">The plot presents that most of the tweets collected accussed Marcos (85 tweets).
+							Then, Robredo (48 tweets).
+							Lastly, Pacquiao had the least amount (18 tweets).
+						</p>
+					</div>
+					<div class="image featured box">
+						<img src="images/votebuying_data_16.png" alt="" />
+						<p style="text-align: left;">The plot visualizes the distribution of the content type of the collected tweets.
+							We can observe that majority of the collected tweets are Rational (89 tweets).
+							On the other hand, collected tweets that are Emotional only amount to 73 tweets.
+						</p>
+					</div>
+					<div class="image featured box">
+						<img src="images/votebuying_data_13.png" alt="" />
+						<p style="text-align: left;">The plot visualizes the breakdown of the content type of the collected tweets among the Candidates.
+							<br><br>For Robredo, we can see that majority of the collected tweets accusing the candidate are Emotional tweets (30 tweets).
+							On the other hand, collected tweets that are Rational and accusing the candidate only amount to 22 tweets.
+							<br><br>For Marcos, we can see that majority of the collected tweets accusing the candidate are Rational tweets (51 tweets).
+							On the other hand, collected tweets that are Rational and accusing the candidate only amount to 42 tweets.
+							<br><br>For Pacquiao, we can see that majority of the collected tweets accusing the candidate are Rational tweets (17 tweets).
+							On the other hand, collected tweets that are Rational and accusing the candidate only amount to 2 tweets.
+						</p>
+					</div>
+					<div class="image featured box">
+						<img src="images/votebuying_data_14.png" alt="" />
+						<p style="text-align: left;">The plot visualizes the growth of the number of tweets accusing a candidate over the *time.
+							It is not technically over time since the x-axis is the order in which the tweet is posted (the tweets are chronologically ordered then labelled incrementally in ascending order).
+							<br><br>We can see that tweets accusing Marcos has the highest growth rate among the three candidates.
+							On the other hand, Pacquiao has the least. This can be attributed to the lack of tweets collected that accused Pacquiao of vote buying or the data collected is not large enough.
+						</p>
+					</div>
+					<div class="image featured box">
+						<img src="images/votebuying_data_15.png" alt="" />
+						<p style="text-align: left;">The plot visualizes the growth of the number of tweets of a certain Content Type over *time.
+							It is not technically over time since the x-axis is the order in which the tweet is posted (the tweets are chronologically ordered then labelled incrementally in ascending order).
+							<br><br>We can see that the tweets that are Rational has a greater growth rate than the tweets that are emotional.
+						</p>
+					</div>
 				</div>
 			</article>
 

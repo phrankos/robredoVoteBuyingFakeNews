@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 	</head>
 	<body class="is-preload">
 
@@ -265,6 +266,26 @@
 						</p>
 					</div>
 					<div class="image featured box">
+						<div id="graph">
+
+						</div>
+						<label for="candidates">Choose candidate:</label>
+						<select name="candidates" id="candidates">
+							<option value="All" selected>All</option>
+							<option value="Robredo">Robredo</option>
+							<option value="Marcos">Marcos</option>
+							<option value="Pacquiao">Pacquiao</option>
+						</select>
+						<p style="text-align: left;">Majority of the collected tweets came from anonymous accounts (131).
+							<br>
+							For tweets alleging Robredo of vote buying, 46 came from anonymous accounts.
+							<br>
+							For tweets alleging Marcos of vote buying, 69 came from anonymous accounts.
+							<br>
+							For tweets alleging Robredo of vote buying, 15 came from anonymous accounts.
+						</p>
+					</div>
+					<div class="image featured box">
 						<img src="images/votebuying_data_14.png" alt="" />
 						<p style="text-align: left;">The plot visualizes the growth of the number of tweets accusing a candidate over the *time.
 							It is not technically over time since the x-axis is the order in which the tweet is posted (the tweets are chronologically ordered then labelled incrementally in ascending order).
@@ -417,3 +438,78 @@
 
 	</body>
 </html>
+
+<script>
+	Plotly.d3.csv('https://raw.githubusercontent.com/lomohoga/dataset/main/dataset.csv', (err, rows) => {
+		let anon = {
+			"All": 0,
+			"Marcos": 0,
+			"Robredo": 0,
+			"Pacquiao": 0,
+		};
+		let iden = {...anon};
+		
+		function getAllData(){
+			rows.forEach(a => {
+				if(a["AccountType"] === "Anonymous"){
+					anon["All"]++;
+
+					for(name of ["Marcos", "Robredo", "Pacquiao"]){
+						if(a[name] === '1'){
+							anon[name]++;
+							break;
+						}
+					}
+				}
+				else{
+					iden["All"]++;
+
+					for(name of ["Marcos", "Robredo", "Pacquiao"]){
+						if(a[name] === '1'){
+							iden[name]++;
+							break;
+						}
+					}
+				}
+			})
+		}
+
+		function plot(anon, iden){
+			let data = [{
+				y: [anon, iden],
+				x: ["Anonymous", "Identified"],
+				type: "bar"
+			}];
+
+			const layout = {
+				height: 600,
+				title: 'Distribution of Twitter accounts based on identity',
+				xaxis: {
+					title: {
+						text: 'Account type'
+					}
+				},
+				yaxis: {
+					title: {
+						text: 'Number of accounts'
+					},
+					range: [0, 150],
+					fixedrange: true
+				}
+			};
+			
+			const lineDiv = document.getElementById('graph');
+			
+			Plotly.newPlot(lineDiv, data, layout)
+		}
+
+		document.querySelector("#candidates").addEventListener("change", (e) => {
+			let name = e.target.value;
+			plot(anon[name], iden[name]);
+		});
+
+		getAllData();
+		plot(anon["All"], iden["All"]);
+	})
+
+</script>

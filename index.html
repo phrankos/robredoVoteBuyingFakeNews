@@ -6,14 +6,22 @@
 -->
 <html>
 	<head>
+		<link rel="icon" href="./images/hmtl logo.ico">
 		<title>PH Twitter Fake News Analysis</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	   
+		<!-- Bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	</head>
 	<body class="is-preload">
-
+		<!-- Option 1: Bootstrap Bundle with Popper -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 		<!-- Nav -->
 			<nav id="nav">
 				<ul class="container">
@@ -22,29 +30,65 @@
 					<li><a href="#data">Data</a></li>
 					<li><a href="#methods">Methods</a></li>
 					<li><a href="#results">Results</a></li>
-					<li><a href="#team">Team</a></li>
 				</ul>
 			</nav>
 
 		<!-- Home -->
+			<article  class="wrapper style1"   style="background-image: url('./images/41_bg.png');  background-size: 100% 100%; height: 100vh;"></article>
 			<article id="top" class="wrapper style1">
 				<div class="container">
 					<div class="row">
-						<div class="col-4 col-5-large col-12-medium">
+						<!--<div class="col-4 col-5-large col-12-medium">
 							<span class="image fit"><img src="images/pic00.jpg" alt="" /></span>
 						</div>
 						<div class="col-8 col-7-large col-12-medium">
 							<header>
-								<h1>Hi. We are <strong>TBD</strong>.</h1>
+								<h1>We are the <strong>Watchdogs</strong>.</h1>
 							</header>
-							<p>And this is our project, <strong>Leni Robredo engaging in Vote Buying(?)</strong>, <em>a short explanation of the project objectives</em>. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<p><strong>Is Leni Robredo engaging in Vote Buying?</strong><p></p>  
+								This data science project looks into the number of vote buying allegations on
+							twitter against a certain candidate </p>
 							<p>Data Science Team</p>
 							<ul style="list-style-type:none; margin-top:-30px;">
 							  <li>Roel Francos Cagulada, WFW</li>
 							  <li>Ethan Joshua Camingao, WFU</li>
 							  <li>Braullo Jo, WFX</li>
-							</ul>
-						</div>
+							</ul>						
+						</div>-->
+						<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+							<div class="carousel-indicators">
+							  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+							  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+							  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+							  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+							  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+							</div>
+							<div class="carousel-inner">
+							  <div class="carousel-item active">
+								<img src="./images/Top_1.png" class="d-block w-100" alt="...">
+							  </div>
+							  <div class="carousel-item">
+								<img src="./images/Top_2.png" class="d-block w-100" alt="...">
+							  </div>
+							  <div class="carousel-item">
+								<img src="./images/Top_3.png" class="d-block w-100" alt="...">
+							  </div>
+							  <div class="carousel-item">
+								<img src="./images/Top_4.png" class="d-block w-100" alt="...">
+							  </div>
+							  <div class="carousel-item">
+								<img src="./images/Top_5.png" class="d-block w-100" alt="...">
+							  </div>
+							</div>
+							<button class="carousel-control-prev" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev" style="visibility: hidden;">
+							  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							  <span class="visually-hidden">Previous</span>
+							</button>
+							<button class="carousel-control-next" data-bs-target="#carouselExampleIndicators" data-bs-slide="next" style="visibility: hidden;">
+							  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+							  <span class="visually-hidden">Next</span>
+							</button>
+						  </div>
 					</div>
 				</div>
 			</article>
@@ -88,7 +132,6 @@
 					</div> <!--Problem Formulation End-->
 					<footer>
 						<p></p>
-						<a href="#portfolio" class="button large scrolly">Let's take a look at our data</a>
 					</footer>
 				</div>
 			</article>
@@ -357,12 +400,12 @@
 					</div>
 					<footer>
 						<p>Want to learn more? Take a look at our source codes.</p>
-						<a href="#contact" class="button large scrolly">Github Repo</a>
+						<a href="https://github.com/phrankos/robredoVoteBuyingFakeNews" class="button large scrolly">Github Repo</a>
 					</footer>
 				</div>
 			</article>
-
-		<!-- Team -->
+		<!--
+		Team
 			<article id="team" class="wrapper style4">
 				<div class="container medium">
 					<header>
@@ -405,7 +448,7 @@
 								<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
 								<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
 								<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								<!--
+								
 								<li><a href="#" class="icon solid fa-rss"><span>RSS</span></a></li>
 								<li><a href="#" class="icon brands fa-instagram"><span>Instagram</span></a></li>
 								<li><a href="#" class="icon brands fa-foursquare"><span>Foursquare</span></a></li>
@@ -415,11 +458,11 @@
 								<li><a href="#" class="icon brands fa-blogger"><span>Blogger</span></a></li>
 								<li><a href="#" class="icon brands fa-flickr"><span>Flickr</span></a></li>
 								<li><a href="#" class="icon brands fa-vimeo"><span>Vimeo</span></a></li>
-								-->
+								
 							</ul>
 							<hr />
 						</div>
-					</div>
+					</div> -->
 					<footer>
 						<ul id="copyright">
 							<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>

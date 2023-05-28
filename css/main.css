@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,600,600italic,700");
 @import url("fontawesome-all.min.css");
-
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
 /*
 	Miniport by HTML5 UP
 	html5up.net | @ajlkn
@@ -2443,3 +2444,20 @@ input, select, textarea {
 					}
 
 	}
+	*, *:before, *:after {
+	  box-sizing: border-box;
+	}
+	
+	html, body {
+	  height: 100%;
+	}
+	
+	body {
+	  color: #444;
+	  font-family: 'Roboto', sans-serif;
+	  font-size: 1rem;
+	  line-height: 1.5;
+	}
+	
+
+	
